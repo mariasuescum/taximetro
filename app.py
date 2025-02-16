@@ -28,6 +28,8 @@ class Taximetro:
     def calcular_tarifa(self, tarifa_por_segundo, modo):
         inicio = time.time()
 
+        calculate_cost = lambda duracion, tarifa: duracion * tarifa
+
         if modo == 'm':
             while keyboard.is_pressed('m'):
                 time.sleep(0.1)
@@ -37,7 +39,7 @@ class Taximetro:
 
         fin = time.time()
         duracion = fin - inicio
-        costo = duracion * tarifa_por_segundo
+        costo = calculate_cost(duracion, tarifa_por_segundo)
         self.total += costo
         print(f"⏱️ Duración: {duracion:.2f} segundos. 💰 Costo añadido: {costo:.2f} €.")
 
