@@ -1,4 +1,4 @@
-
+![Banner Proyectos](https://github.com/user-attachments/assets/bc6e34f7-4031-43dd-8cfc-805c935ba3c4)
 
 # 🚖 Taxímetro Digital - TaxiGo
 
