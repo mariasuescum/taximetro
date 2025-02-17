@@ -1,43 +1,45 @@
-# TaxiGo - Taxímetro Digital 🚖
 
-## Descripción
-TaxiGo es una aplicación de taxímetro digital desarrollada en Python que permite calcular el costo de un trayecto en taxi basado en el tiempo transcurrido en movimiento y en parada.
 
-## Características
-✅ Calcula tarifas en tiempo real según el estado del taxi (movimiento o parada).  
-✅ Interfaz en consola con interacción mediante el teclado.  
-✅ Tarifas ajustables según el tiempo en cada estado.  
-✅ Mensajes en tiempo real sobre el estado del trayecto.  
+# 🚖 Taxímetro Digital - TaxiGo
 
-## Instalación
-1. Clona este repositorio o descarga los archivos.
-   ```bash
-   git clone https://github.com/tuusuario/taxigo.git
-   cd taxigo
-   ```
-2. Instala las dependencias necesarias (asegúrate de tener Python instalado).
-   ```bash
-   pip install keyboard
-   ```
+¡Bienvenido a TaxiGo, tu taxímetro digital en Python! 🚖  
+Con TaxiGo, puedes calcular el costo de un trayecto en taxi basado en el tiempo en movimiento y en parada.  
+Ideal para conductores y pasajeros que desean conocer el costo estimado de un viaje en tiempo real.
 
-## Uso
-Ejecuta el script principal:
-```bash
-python taximetro.py
-```
+---
 
-### Controles
-- **`m`** → Indica que el taxi está en movimiento.
-- **`p`** → Indica que el taxi está detenido.
-- **`f`** → Finaliza el trayecto y muestra el costo total.
+## 📖 Índice  
+- 🎮 Descripción 
+- 🛠 Características 
+- 📌 Cómo usar    
+- 🔥 Posibles mejoras  
+- 🛠 Instalación y ejecución 
+- 🏆 Contribuciones  
 
-## Funcionamiento
-1. Al iniciar el programa, se pregunta si deseas iniciar un nuevo trayecto.
-2. Durante el trayecto:
-   - Presiona `m` para calcular la tarifa de movimiento.
-   - Presiona `p` para calcular la tarifa de parada.
-   - Presiona `f` para finalizar y ver el costo total.
-3. El programa muestra el costo acumulado según la duración en cada estado.
+---
+
+## 🛠 Características  
+
+✅ Cálculo en tiempo real del costo del trayecto.  
+✅ Detección de estado del taxi mediante el teclado:  
+
+- `m` para indicar movimiento.  
+- `p` para indicar parada.  
+- `f` para finalizar el trayecto.  
+
+✅ Diferentes tarifas para movimiento y parada.  
+✅ Registro del tiempo transcurrido y su costo asociado.  
+✅ Interfaz de consola simple e intuitiva.  
+
+---
+
+## 📌 Cómo usar  
+
+1. Ejecuta el programa desde la terminal.  
+2. Presiona `m` cuando el taxi esté en movimiento.  
+3. Presiona `p` cuando el taxi esté detenido.  
+4. Presiona `f` para finalizar el trayecto y ver el total.  
+5. Consulta el costo del trayecto en pantalla.  
 
 ## Ejemplo de salida
 ```bash
@@ -50,13 +52,71 @@ Trayecto iniciado. Presione 'm' cuando esté en movimiento, 'p' cuando esté par
 ⏱️ Duración: 5.00 segundos. 💰 Costo añadido: 0.10 €.
 ✅ Trayecto finalizado. Total a cobrar: 0.60 €.
 ```
+---
 
+## ⚠️ Problemas detectados  
+
+🔹 No hay una interfaz gráfica: Todo funciona desde la terminal.  
+🔹 No guarda historiales de trayectos.  
+🔹 No permite configurar tarifas personalizadas.  
+🔹 No detecta automáticamente el estado del vehículo.  
+
+---
+
+## 🔥 Posibles mejoras  
+
+### 🟡 Nivel Medio  
+- Implementar un sistema de logs para la trazabilidad del código.  
+- Agregar tests unitarios para asegurar el correcto funcionamiento del programa.  
+- Crear un registro histórico de trayectos pasados en un archivo de texto plano.  
+- Permitir la configuración de precios para adaptarse a la demanda actual.  
+
+### 🟠 Nivel Avanzado  
+- Refactorizar el código utilizando un enfoque orientado a objetos (OOP).  
+- Implementar un sistema de autenticación con contraseñas para proteger el acceso al programa.  
+- Desarrollar una interfaz gráfica de usuario (GUI) para hacer el programa más amigable.  
+
+### 🔴 Nivel Experto  
+- Integrar una base de datos para almacenar los registros de trayectos pasados.  
+- Dockerizar la aplicación para facilitar su despliegue y portabilidad.  
+- Desarrollar una versión web de la aplicación accesible a través de internet.  
+
+---
+
+## 🛠 Instalación y ejecución  
+
+Asegúrate de tener Python instalado en tu sistema.  
+Si aún no lo tienes, descárgalo desde [python.org](https://www.python.org/downloads/).  
+
+🔹 Creación de un entorno virtual
+
+Se recomienda utilizar un entorno virtual para evitar conflictos con otras dependencias del sistema. Para crearlo y activarlo, ejecuta los siguientes comandos:
+
+```sh
+python -m venv env  # Crear el entorno virtual
+source env/bin/activate  # Activar el entorno en Linux/Mac
+env\Scripts\activate  # Activar el entorno en Windows
+```
+
+🔹 Instala las dependencias necesarias con:
+
+Una vez activado el entorno virtual, instala las dependencias necesarias con:
+```sh
+pip install keyboard
+```
+🔹 Ejecutar el taxímetro
+
+Finalmente, ejecuta el programa con:
+```sh
+python taximetro.py
+```
 ## Requisitos
 - Python 3.x
 - Biblioteca `keyboard` (para capturar las teclas presionadas)
 
-## Contribuciones
-¡Las contribuciones son bienvenidas! Si deseas mejorar el proyecto, por favor abre un issue o envía un pull request.
+## 🏆 Contribuciones
+¡Nos encantaría recibir sugerencias y mejoras! Si tienes ideas para mejorar el proyecto, abre un issue o envía un pull request en este repositorio.
+📩 Contacto: [https://github.com/mariasuescum]
 
 ## Licencia
 Este proyecto está bajo la licencia MIT. Puedes usarlo, modificarlo y distribuirlo libremente.
