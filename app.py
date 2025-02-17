@@ -62,11 +62,12 @@ def main():
         opcion = input("¿Desea iniciar un nuevo trayecto? (s/n): ").lower()
         if opcion == 's':
             taximetro.iniciar_trayecto()
+            break
         elif opcion == 'n':
             print("🚗💨 Gracias por usar Taxímetro Digital TaxiGo. ¡Hasta la próxima!")
             break
         else:
-            print("Opción no válida.")
+            print("Opción no válida. Por favor ingrese 's' o 'n'.")
 
 if __name__ == "__main__":
     main()
