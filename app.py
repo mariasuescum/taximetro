@@ -1,68 +1,69 @@
 import time
 import keyboard  
 
-class Taximeter:
+class Taximetro:
     def __init__(self):
         self.total = 0
         self.en_movimiento = False
-        self.on_trip = False
+        self.en_trayecto = False
 
-    def start_trip(self):
+    def iniciar_trayecto(self):
         self.total = 0
-        self.on_trip = True
+        self.en_trayecto = True
         print("Trayecto iniciado. Presione 'm' cuando esté en movimiento, 'p' cuando esté parado y 'f' para finalizar el trayecto.")
 
-        while self.on_trip:
+        while self.en_trayecto:
             if keyboard.is_pressed('m'):
                 print("🟢 Calculando tarifa en movimiento...")
-                self.calculate_fare(0.05, mode='m')
+                self.calcular_tarifa(0.05, modo='m')
 
             elif keyboard.is_pressed('p'):
                 print("🔴 Calculando tarifa en parada...")
-                self.calculate_fare(0.02, mode='p')
+                self.calcular_tarifa(0.02, modo='p')
 
             elif keyboard.is_pressed('f'):
-                self.finish_trip()
+                self.finalizar_trayecto()
                 return 
 
-            time.sleep(0.1)
+            time.sleep(0.1)  # Add a small delay to prevent high CPU usage
 
-    def calculate_fare(self, fare_per_second, mode):
-        start_time = time.time()
+    def calcular_tarifa(self, tarifa_por_segundo, modo):
+        inicio = time.time()
 
-        calculate_cost = lambda duration, tarifa: duration * tarifa
+        calculate_cost = lambda duracion, tarifa: duracion * tarifa
 
-        if mode == 'm':
+        if modo == 'm':
             while not keyboard.is_pressed('p') and not keyboard.is_pressed('f'):
                 time.sleep(0.1)
-        elif mode == 'p':
+        elif modo == 'p':
             while not keyboard.is_pressed('m') and not keyboard.is_pressed('f'):
                 time.sleep(0.1)
 
-        end_time = time.time()
-        duration = end_time - start_time
-        cost = calculate_cost(duration, fare_per_second)
-        self.total += cost
-        print(f"⏱️ Duración: {duration:.2f} segundos. 💰 Costo añadido: {cost:.2f} €.")
+        fin = time.time()
+        duracion = fin - inicio
+        costo = calculate_cost(duracion, tarifa_por_segundo)
+        self.total += costo
+        print(f"⏱️ Duración: {duracion:.2f} segundos. 💰 Costo añadido: {costo:.2f} €.")
 
-    def finish_trip(self):
-        self.on_trip = False
+    def finalizar_trayecto(self):
+        self.en_trayecto = False
         print(f"✅ Trayecto finalizado. Total a cobrar: {self.total:.2f} €.")
 
 def main():
     print("🚖 ¡Bienvenido a TaxiGo, tu taxímetro digital! 🚖")
-    print("TaxiGo calcula el costo de tu trayecto según el tiempo en movimiento y cuando el taxi está detenido.")
+    print("Con TaxiGo, puedes calcular el costo de un trayecto en taxi basado en el tiempo en movimiento y en parada.")
     print("\n💡 ¿Cómo funciona?")
-    print("- Si el taxi está en movimiento, el costo aumenta según el tiempo transcurrido.")
-    print("- Si el taxi deja de moverse, el costo aumenta pero es más bajo.")
-    print("- Presione 'm' para indicar movimiento, 'p' para indicar que está detenido y 'f' para finalizar el trayecto.")
+    print("   - Si el taxi está en movimiento, el costo aumenta según el tiempo transcurrido.")
+    print("   - Si el taxi deja de moverse, el costo aumenta a un ritmo más bajo.")
+    print("   - Presiona 'm' para indicar movimiento, 'p' para indicar que está detenido y 'f' para finalizar el trayecto.")
     print("\n¡Vamos a empezar!\n")
-    taximeter = Taximeter()
+    taximetro = Taximetro()
     while True:
-        option = input("¿Desea iniciar un nuevo trayecto? (s/n): ").lower()
-        if option == 's':
-            taximeter.start_trip()
-        elif option == 'n':
+        opcion = input("¿Desea iniciar un nuevo trayecto? (s/n): ").lower()
+        if opcion == 's':
+            taximetro.iniciar_trayecto()
+            break
+        elif opcion == 'n':
             print("🚗💨 Gracias por usar Taxímetro Digital TaxiGo. ¡Hasta la próxima!")
             break
         else:
