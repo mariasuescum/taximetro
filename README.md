@@ -1,22 +1,23 @@
 ![Banner Proyectos](https://github.com/user-attachments/assets/bc6e34f7-4031-43dd-8cfc-805c935ba3c4)
 
+---
+## 📖 Índice  
+- 🚕 Descripción 
+- 🛠 Características 
+- 📌 Cómo usar    
+- 🔥 Posibles mejoras  
+- 🛠 Instalación y ejecución
+- ✅ Requisitos 
+- 🏆 Gestión del proyecto con Scrum y Trello
+- 🏆 Contribuciones
+  
+
+---
 # 🚖 Taxímetro Digital - TaxiGo
 
 ¡Bienvenido a TaxiGo, tu taxímetro digital en Python! 🚖  
 Con TaxiGo, puedes calcular el costo de un trayecto en taxi basado en el tiempo en movimiento y en parada.  
 Ideal para conductores y pasajeros que desean conocer el costo estimado de un viaje en tiempo real.
-
----
-
-## 📖 Índice  
-- 🎮 Descripción 
-- 🛠 Características 
-- 📌 Cómo usar    
-- 🔥 Posibles mejoras  
-- 🛠 Instalación y ejecución 
-- 🏆 Contribuciones  
-
----
 
 ## 🛠 Características  
 
