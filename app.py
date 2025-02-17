@@ -17,13 +17,15 @@ class Taximetro:
                 print("🟢 Calculando tarifa en movimiento...")
                 self.calcular_tarifa(0.05, modo='m')
 
-            if keyboard.is_pressed('p'):
+            elif keyboard.is_pressed('p'):
                 print("🔴 Calculando tarifa en parada...")
                 self.calcular_tarifa(0.02, modo='p')
 
-            if keyboard.is_pressed('f'):
+            elif keyboard.is_pressed('f'):
                 self.finalizar_trayecto()
-                return  # Continua con el menú principal sin salir del bucle
+                return 
+
+            time.sleep(0.1)  # Add a small delay to prevent high CPU usage
 
     def calcular_tarifa(self, tarifa_por_segundo, modo):
         inicio = time.time()
@@ -31,10 +33,10 @@ class Taximetro:
         calculate_cost = lambda duracion, tarifa: duracion * tarifa
 
         if modo == 'm':
-            while keyboard.is_pressed('m'):
+            while not keyboard.is_pressed('p') and not keyboard.is_pressed('f'):
                 time.sleep(0.1)
         elif modo == 'p':
-            while keyboard.is_pressed('p'):
+            while not keyboard.is_pressed('m') and not keyboard.is_pressed('f'):
                 time.sleep(0.1)
 
         fin = time.time()
@@ -46,7 +48,6 @@ class Taximetro:
     def finalizar_trayecto(self):
         self.en_trayecto = False
         print(f"✅ Trayecto finalizado. Total a cobrar: {self.total:.2f} €.")
-
 
 def main():
     print("🚖 ¡Bienvenido a TaxiGo, tu taxímetro digital! 🚖")
@@ -61,12 +62,12 @@ def main():
         opcion = input("¿Desea iniciar un nuevo trayecto? (s/n): ").lower()
         if opcion == 's':
             taximetro.iniciar_trayecto()
+            break
         elif opcion == 'n':
             print("🚗💨 Gracias por usar Taxímetro Digital TaxiGo. ¡Hasta la próxima!")
             break
         else:
-            print("Opción no válida.")
-
+            print("Opción no válida. Por favor ingrese 's' o 'n'.")
 
 if __name__ == "__main__":
     main()
