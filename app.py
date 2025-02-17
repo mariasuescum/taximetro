@@ -4,7 +4,7 @@ import keyboard
 class Taximeter:
     def __init__(self):
         self.total = 0
-        self.en_movimiento = False
+        self.is_moving = False
         self.on_trip = False
 
     def start_trip(self):
@@ -25,12 +25,12 @@ class Taximeter:
                 self.finish_trip()
                 return 
 
-            time.sleep(0.1)
+            time.sleep(0.1)  # Add a small delay to prevent high CPU usage
 
     def calculate_fare(self, fare_per_second, mode):
         start_time = time.time()
 
-        calculate_cost = lambda duration, tarifa: duration * tarifa
+        calculate_cost = lambda duration, fare: duration * fare
 
         if mode == 'm':
             while not keyboard.is_pressed('p') and not keyboard.is_pressed('f'):
@@ -62,6 +62,7 @@ def main():
         option = input("¿Desea iniciar un nuevo trayecto? (s/n): ").lower()
         if option == 's':
             taximeter.start_trip()
+            break
         elif option == 'n':
             print("🚗💨 Gracias por usar Taxímetro Digital TaxiGo. ¡Hasta la próxima!")
             break
