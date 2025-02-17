@@ -30,7 +30,7 @@ class Taximeter:
     def calculate_fare(self, fare_per_second, mode):
         start_time = time.time()
 
-        calculate_cost = lambda duration, tarifa: duration * tarifa
+        calculate_cost = lambda duration, fare: duration * fare
 
         if mode == 'm':
             while not keyboard.is_pressed('p') and not keyboard.is_pressed('f'):
