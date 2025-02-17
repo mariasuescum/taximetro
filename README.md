@@ -114,9 +114,16 @@ python taximetro.py
 - Python 3.x
 - Biblioteca `keyboard` (para capturar las teclas presionadas)
 
+##  🏆 Gestión del proyecto con Scrum y Trello
+
+TaxiGo se ha desarrollado siguiendo la metodología ágil Scrum, organizando tareas  y priorizando funcionalidades en un tablero de Trello. Esto nos ha permitido mejorar la productividad y la planificación del proyecto de manera eficiente. 
+
+puedes revisar nuestro tablero de Trello en el siguiente enlace: [Enlace a Trello.](https://trello.com/invite/b/67a49c6dab53358e1ee7c410/ATTI91c91593a091a5dcda5cdc1f9da5181bAFCFE49C/taxigo-andreina-suescum). 
+
 ## 🏆 Contribuciones
 ¡Nos encantaría recibir sugerencias y mejoras! Si tienes ideas para mejorar el proyecto, abre un issue o envía un pull request en este repositorio.
-📩 Contacto: [https://github.com/mariasuescum]
+📩 Contacto: [Github](https://github.com/mariasuescum). 
+
 
 ## Licencia
 Este proyecto está bajo la licencia MIT. Puedes usarlo, modificarlo y distribuirlo libremente.
